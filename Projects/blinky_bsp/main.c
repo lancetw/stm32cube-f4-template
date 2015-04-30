@@ -4,21 +4,8 @@
 
 #include "main.h"
 
-#define ORANGE LED3_PIN
-#define GREEN  LED4_PIN
-#define RED    LED5_PIN
-#define BLUE   LED6_PIN
-
-#define ALL_LEDS (GREEN | ORANGE | RED | BLUE)
-
 #define PAUSE_LONG  400
 #define PAUSE_SHORT 100
-
-#define LEDS_GPIO_PORT (GPIOD)
-
-
-/* LEDn is defined in stm32f4_discovery.h */
-static uint16_t leds[LEDn] = {GREEN, ORANGE, RED, BLUE};
 
 /* GPIO pins are declared in stm32f4xx_hal_gpio.h */
 GPIO_InitTypeDef GPIO_InitStructure;
@@ -36,7 +23,7 @@ static void setup_leds(void)
 static void led_round(void)
 {
   int i;
-  for (i = 0; i < LEDn; i++)
+  for (i = 0; i < 4; i++)
   {
     BSP_LED_On(i);
     HAL_Delay(PAUSE_LONG);
