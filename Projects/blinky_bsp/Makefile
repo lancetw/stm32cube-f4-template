@@ -9,4 +9,3 @@ SRCS     += stm32f4xx_hal_gpio.c
 SRCS     += stm32f4xx_hal_cortex.c
 
 include ../../Makefile.include
-

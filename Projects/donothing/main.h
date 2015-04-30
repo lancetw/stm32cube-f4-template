@@ -4,4 +4,3 @@
 /* #include "stm32f4_discovery.h" */
 
 #endif /* __MAIN_H */
-

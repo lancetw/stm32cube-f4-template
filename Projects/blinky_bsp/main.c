@@ -38,7 +38,7 @@ static void flash_all_leds(void)
     BSP_LED_Toggle(LED4);
     BSP_LED_Toggle(LED5);
     BSP_LED_Toggle(LED6);
-    HAL_Delay(PAUSE_SHORT); 
+    HAL_Delay(PAUSE_SHORT);
   }
 }
 
@@ -47,9 +47,9 @@ static void flash_all_leds(void)
 int main(void)
 {
   HAL_Init();
-  
+
   setup_leds();
- 
+
   while (1) {
     led_round();
     flash_all_leds();
@@ -57,7 +57,3 @@ int main(void)
 
   return 0;
 }
-
-
-
-
