@@ -7,7 +7,7 @@
 #define PAUSE_LONG  400
 #define PAUSE_SHORT 100
 
-
+/* BSP_LED_Init is defined in stm32f4_discovery.h */
 static void setup_leds(void)
 {
   BSP_LED_Init(LED3);
