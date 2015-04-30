@@ -23,13 +23,12 @@ static void setup_leds(void)
 static void led_round(void)
 {
   int i;
-  for (i = 0; i < 4; i++)
-  {
+  for (i = 0; i < 4; i++) {
     BSP_LED_On(i);
     HAL_Delay(PAUSE_LONG);
 
     BSP_LED_Off(i);
-   }
+  }
 }
 
 
@@ -37,8 +36,7 @@ static void led_round(void)
 static void flash_all_leds(void)
 {
   int i;
-  for (i = 0; i < 4; i++)
-  {
+  for (i = 0; i < 4; i++) {
     BSP_LED_Toggle(LED3);
     BSP_LED_Toggle(LED4);
     BSP_LED_Toggle(LED5);
