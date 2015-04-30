@@ -26,12 +26,10 @@ GPIO_InitTypeDef GPIO_InitStructure;
 
 static void setup_leds(void)
 {
-  __GPIOD_CLK_ENABLE();
-  GPIO_InitStructure.Pin   = ALL_LEDS;
-  GPIO_InitStructure.Mode  = GPIO_MODE_OUTPUT_PP;
-  GPIO_InitStructure.Speed = GPIO_SPEED_FAST;
-  GPIO_InitStructure.Pull  = GPIO_PULLUP;
-  HAL_GPIO_Init(LEDS_GPIO_PORT, &GPIO_InitStructure);
+  BSP_LED_Init(LED3);
+  BSP_LED_Init(LED4);
+  BSP_LED_Init(LED5);
+  BSP_LED_Init(LED6);
 }
 
 
@@ -40,11 +38,11 @@ static void led_round(void)
   int i;
   for (i = 0; i < LEDn; i++)
   {
-    HAL_GPIO_WritePin(LEDS_GPIO_PORT, leds[i], GPIO_PIN_SET);
+    BSP_LED_On(i);
     HAL_Delay(PAUSE_LONG);
-    
-    HAL_GPIO_WritePin(LEDS_GPIO_PORT, leds[i], GPIO_PIN_RESET);
-  }
+
+    BSP_LED_Off(i);
+   }
 }
 
 
@@ -54,11 +52,11 @@ static void flash_all_leds(void)
   int i;
   for (i = 0; i < 4; i++)
   {
-    HAL_GPIO_WritePin(LEDS_GPIO_PORT, ALL_LEDS, GPIO_PIN_SET);
-    HAL_Delay(PAUSE_SHORT);
-
-    HAL_GPIO_WritePin(LEDS_GPIO_PORT, ALL_LEDS, GPIO_PIN_RESET);
-    HAL_Delay(PAUSE_SHORT);
+    BSP_LED_Toggle(LED3);
+    BSP_LED_Toggle(LED4);
+    BSP_LED_Toggle(LED5);
+    BSP_LED_Toggle(LED6);
+    HAL_Delay(PAUSE_SHORT); 
   }
 }
 
