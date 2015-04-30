@@ -38,8 +38,7 @@ static void setup_leds(void)
 static void led_round(void)
 {
   int i;
-  for (i = 0; i < LEDn; i++)
-  {
+  for (i = 0; i < LEDn; i++) {
     HAL_GPIO_WritePin(LEDS_GPIO_PORT, leds[i], GPIO_PIN_SET);
     HAL_Delay(PAUSE_LONG);
     
@@ -52,8 +51,7 @@ static void led_round(void)
 static void flash_all_leds(void)
 {
   int i;
-  for (i = 0; i < 4; i++)
-  {
+  for (i = 0; i < 4; i++) {
     HAL_GPIO_WritePin(LEDS_GPIO_PORT, ALL_LEDS, GPIO_PIN_SET);
     HAL_Delay(PAUSE_SHORT);
 
