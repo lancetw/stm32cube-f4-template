@@ -7,9 +7,6 @@
 #define PAUSE_LONG  400
 #define PAUSE_SHORT 100
 
-/* GPIO pins are declared in stm32f4xx_hal_gpio.h */
-GPIO_InitTypeDef GPIO_InitStructure;
-
 
 static void setup_leds(void)
 {
