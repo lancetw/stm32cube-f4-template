@@ -1,4 +1,4 @@
-#STM32F4Discovery STM32CubeF4 template for Linux
+#STM32CubeF4 template for Linux
 
 `$ cd Projects/blinky`
 
